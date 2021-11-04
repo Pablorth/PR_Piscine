@@ -17,18 +17,18 @@ export default function App() {
     <View style={styles.container}>
       <Profil name={"Roger"} />
       <SafeAreaView style={{marginBottom:"10%"}}>
-        <ScrollView horizontal="true" style={{ flexDirection: "row" }}>
+        <ScrollView showsHorizontalScrollIndicator={false} horizontal="true" style={{ flexDirection: "row" }}>
           <ScrollBox
-            //imgLink={require("./assets/img/javascript.png")}
+            imgLink={require("./assets/javascript.png")}
             textElmt="Javascript"
           />
           <ScrollBox
-            //imgLink={require("./assets/img/react.png")}
+            imgLink={require("./assets/react.jpg")}
             textElmt="React"
           />
           <ScrollBox
-            //imgLink={require("./assets/img/react.png")}
-            textElmt="Node.js"
+            imgLink={require("./assets/redux.png")}
+            textElmt="Redux"
           />
         </ScrollView>
       </SafeAreaView>
@@ -36,17 +36,18 @@ export default function App() {
         <Text style={{marginLeft:"5%"}}>
           CONTINUE LEARNING
         </Text>
-        <ScrollView horizontal="true" style={{ flexDirection: "row" }}>
+        <ScrollView showsHorizontalScrollIndicator={false} horizontal="true" style={{ flexDirection: "row" }}>
           <ScrollBox2
-            //imgLink={require("./assets/img/javascript.png")}
+            imgLink={require("./assets/kaamelottbon.jpeg")}
             textElmt="Javascript"
           />
           <ScrollBox2
-            //imgLink={require("./assets/img/react.png")}
+            imgLink=
+            {require("./assets/react.jpg")}
             textElmt="React"
           />
           <ScrollBox2
-            //imgLink={require("./assets/img/react.png")}
+            imgLink={require("./assets/redux.png")}
             textElmt="Node.js"
           />
         </ScrollView>
@@ -57,15 +58,15 @@ export default function App() {
         </Text>
         <ScrollView style={styles.lastScroll}>
           <ScrollBox3
-            //imgLink={require("./assets/img/javascript.png")}
+            imgLink={require("./assets/javascript.png")}
             textElmt="Javascript"
           />
           <ScrollBox3
-            //imgLink={require("./assets/img/react.png")}
+            imgLink={require("./assets/kaamelottbon.jpeg")}
             textElmt="React"
           />
           <ScrollBox3
-            //imgLink={require("./assets/img/react.png")}
+            imgLink={require("./assets/abstract_bg.jpeg")}
             textElmt="Node.js"
           />
         </ScrollView>
