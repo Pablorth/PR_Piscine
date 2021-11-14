@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, ScrollView, FlatList } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-import DetailScreen from '../screens/DetailScreen';
 
 const DrawerTest = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
@@ -28,8 +26,12 @@ const DrawerTest = ({ navigation }) => {
       keyExtractor={({ url }, index) => url}
       renderItem={({ item }) => (
         <DrawerItem label={item.name}
-          onPress={() => DetailScreen(item)}
-        //initialParams={{ url: "https://pokeapi.co/api/v2/pokemon/1" }}
+          onPress={() =>
+            navigation.navigate('Detail', {
+              item: item,
+              url: item.url,
+            })
+          }
         />
       )}
     />

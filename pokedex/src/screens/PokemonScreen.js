@@ -30,7 +30,10 @@ export default function PokemonScreen({ navigation }) {
         renderItem={({ item }) => (
           <Text
             onPress={() =>
-              navigation.navigate('Detail', { url: item.url })
+              navigation.navigate('Detail', {
+                item: item,
+                url: item.url,
+              })
             }
           >
             {item.name}
