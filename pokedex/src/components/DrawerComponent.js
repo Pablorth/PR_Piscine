@@ -5,7 +5,7 @@ import ModelSScreen from '../../src/screens/ModelSScreen';
 import Model3Screen from '../../src/screens/Model3Screen';
 import ModelXScreen from '../../src/screens/ModelXScreen';
 import ModelYScreen from '../../src/screens/ModelYScreen';
-import PokemonScreen from'../screens/PokemonScreen';
+import PokemonScreen from '../screens/PokemonScreen';
 
 const Drawer = createDrawerNavigator();
 
