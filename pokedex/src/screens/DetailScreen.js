@@ -6,38 +6,47 @@ import {
   StyleSheet,
   ImageBackground,
   Image,
-  FlatList
+  FlatList,
+  SafeAreaView,
 } from "react-native";
 
 
 export default function DetailScreen({ route, navigation }) {
 
   const { url, item } = route.params;
+  const name = item.name;
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  useEffect(async () => {
+  
+  async function FetchPokemon() {
+    // tu fetch ici et ensuite tu mets dans ton state 
+    fetch('https://reactnative.dev/movies.json')    
+    .then((res) => res.json())    
+    .then((json) => {
+      console.log(json.movies);     
+      return json.movies;
+    })
+    
 
-    const datas = await fetch(url);
-    const pokemon = await datas.json();
-    setData(pokemon.results);
-    console.log(data);
+  }
 
-  }, [])
+  //FetchPokemon().then(pokemon => console.log());
 
+ 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text
         onPress={() => navigation.toggleDrawer()}
         style={styles.menuLink}>Menu
       </Text>
       <Text>
-        {item.name}
+        {name}
       </Text>
       <Text>
         {url}
       </Text>
-    </View>
+    </SafeAreaView>
   );
 }
 

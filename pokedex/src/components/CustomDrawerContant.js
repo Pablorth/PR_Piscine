@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, ScrollView, FlatList } from 'react-native';
+import { View, Text, ScrollView, FlatList,Button } from 'react-native';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -10,6 +10,7 @@ import {
 const DrawerTest = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  
 
   useEffect(async () => {
 
@@ -25,14 +26,15 @@ const DrawerTest = ({ navigation }) => {
       data={data}
       keyExtractor={({ url }, index) => url}
       renderItem={({ item }) => (
-        <DrawerItem label={item.name}
-          onPress={() =>
-            navigation.navigate('Detail', {
-              item: item,
-              url: item.url,
-            })
-          }
-        />
+        <Text
+            onPress={() =>
+              navigation.navigate('Detail', {
+                item: item,
+                url: item.url,
+              })
+            }
+          > {item.name}
+          </Text>
       )}
     />
   )

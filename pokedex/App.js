@@ -29,7 +29,7 @@ export default function App() {
 
   }, [])
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <Drawer.Navigator
         drawerContent={(data) => <CustomDrawerContent {...data} />}
         screenOptions={{ headerShown: false }}
