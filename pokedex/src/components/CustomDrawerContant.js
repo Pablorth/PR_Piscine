@@ -6,11 +6,13 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
+import { useNavigation } from '@react-navigation/native';
 
-const DrawerTest = ({ navigation }) => {
+const DrawerTest = ( props ) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  
+  const navigation = useNavigation();
+
 
   useEffect(async () => {
 
@@ -21,20 +23,23 @@ const DrawerTest = ({ navigation }) => {
     console.log(pokemon.results)
 
   }, [])
+
+  console.log(props)
+
   return (
     <FlatList
       data={data}
       keyExtractor={({ url }, index) => url}
       renderItem={({ item }) => (
-        <Text
-            onPress={() =>
-              navigation.navigate('Detail', {
-                item: item,
-                url: item.url,
-              })
-            }
-          > {item.name}
-          </Text>
+        <DrawerItem
+          label={item.name}
+          onPress={() =>
+            navigation.navigate("Detail", {
+              item: item,
+              url: item.url,
+            })
+          }
+        /> 
       )}
     />
   )
