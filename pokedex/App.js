@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { Text, View, FlatList,StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import {
   createDrawerNavigator,
@@ -35,11 +35,11 @@ export default function App() {
         screenOptions={{ headerShown: false }}
         initialRouteName="Pokemons">
         <Drawer.Screen name="Pokemons" component={PokemonScreen} />
-        <Drawer.Screen 
+        <Drawer.Screen
+
           options={() => ({
             drawerLabel: () => null,
-            title: undefined,
-            drawerIcon: () => null,
+
           })}
           name="Detail" 
           component={DetailScreen} 
@@ -49,3 +49,4 @@ export default function App() {
     </NavigationContainer>
   );
 };
+
